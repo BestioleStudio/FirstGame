@@ -1,0 +1,22 @@
+Zelda like 
+Vue du dessus, action RPG (Puzzle?)
+
+Fantasy
+
+TO DO:
+
+GRAPHISME:
+Map: carré 30*30 (Setra)
+Perso: design + animation (rinkaro)
+Armes
+
+PROGRAM
+Déplacement
+	Dash
+Attaque
+	Differentes attaques
+IA ennemy
+Collision
+Ramasser objet
+Inventaire
+Vie
