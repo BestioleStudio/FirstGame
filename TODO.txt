@@ -1,22 +1,52 @@
-Zelda like 
-Vue du dessus, action RPG (Puzzle?)
+MageCraft Like
+action 2D game
 
-Fantasy
-
-TO DO:
+/// TO DO: ///
 
 GRAPHISME:
-Map: carré 30*30 (Setra)
-Perso: design + animation (rinkaro)
-Armes
+Elements de map				||||||||..	80%
+Design personnage 			||||||||||	100%
 
 PROGRAM
+
+Creation Maps (3)			|||.......	30%
+Raprochement lave			..........	0%
+
 Déplacement
-	Dash
+	clic droit déplacement		||||||||..	80%
+	rotation personnage		||||||||||	100%
+	Curseur de déplacement		..........	0%
+
 Attaque
-	Differentes attaques
+	Class mere 			|||||.....	50%
+	Premier tir (base attaque)	..........	0%
+	Pluie de meteor			..........	0%
+	Impact explosif			..........	0%
+	Tir rapide			..........	0%
+	Tir de barrage			..........	0%
+
+Passif spell
+	Téléportation			..........	0%
+	Invisible			..........	0%
+	Dash				..........	0%
+	Heal				..........	0%
+	Bouclier			..........	0%
+
+Interface Utilisateur
+	Emplacement spell		..........	0%
+	Creation partie			..........	0%
+	Vie				..........	0%
+
+Perte de vie 
+	venant des attaques		..........	0%
+	venant de la lave		..........	0%
+
+Multijoueur
+	LAN				..........	0%
+	ONLINE				..........	0%
+
+
+/// FACULTATIF ///
+
 IA ennemy
-Collision
-Ramasser objet
-Inventaire
-Vie
+Refonte graphique
