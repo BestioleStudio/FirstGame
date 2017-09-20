@@ -10,11 +10,11 @@ Design personnage 			||||||||||	100%
 PROGRAM
 
 Creation Maps (3)			|||.......	30%
-Raprochement lave			..........	0%
+Rapprochement lave			..........	0%
 
 Déplacement
 	clic droit déplacement		||||||||..	80%
-	rotation personnage		||||||||||	100%
+	Rotation personnage		||||||||||	100%
 	Curseur de déplacement		..........	0%
 
 Attaque
@@ -38,8 +38,8 @@ Interface Utilisateur
 	Vie				..........	0%
 
 Perte de vie 
-	venant des attaques		..........	0%
-	venant de la lave		..........	0%
+	Venant des attaques		..........	0%
+	Venant de la lave		..........	0%
 
 Multijoueur
 	LAN				..........	0%
