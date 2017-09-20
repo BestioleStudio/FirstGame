@@ -12,18 +12,17 @@ public class AttackWithSpell : MonoBehaviour {
     public float offset = 1f;
 
     public string keyToTrigger;
-
-    // Use this for initialization
+    
     void Awake()
     {
-        StartCoroutine(waitUtileReload());
+        StartCoroutine(WaitUtileReload());
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
+        PlayerController playerController = GetComponent<PlayerController>();
 
-        if (Input.GetMouseButtonDown(0) && readyToShoot)
+        if (Input.GetMouseButtonDown(0) && readyToShoot && playerController.keyPressed == "a")
         {
             Debug.Log("fire");
             Shoot();
@@ -43,10 +42,10 @@ public class AttackWithSpell : MonoBehaviour {
         go.GetComponent<Rigidbody2D>().velocity = new Vector2(normaliseVector.x * velocity, normaliseVector.y * velocity);
 
         readyToShoot = false;
-        StartCoroutine(waitUtileReload());
+        StartCoroutine(WaitUtileReload());
     }
 
-    IEnumerator waitUtileReload()
+    IEnumerator WaitUtileReload()
     {
         yield return new WaitForSeconds(reloadTime);
         readyToShoot = true;

@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 difference;
     public float moveSpeed = 30f;
     public GameObject _pointer;
+    public String keyPressed;
 
     // Use this for initialization
     void Start()
@@ -35,8 +36,18 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.anyKeyDown)
+        {
+            if (Input.GetKeyDown("a"))
+            {
+                keyPressed = "a";
+            } else if (Input.GetKeyDown("z"))
+            {
+                keyPressed = "z";
+            }
+        }
 
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) || Input.GetMouseButton(1))
         {
             _target = Camera.ScreenToWorldPoint(Input.mousePosition);
             _target.z = transform.position.z;
@@ -52,8 +63,12 @@ public class PlayerController : MonoBehaviour
 
         if (anim.GetBool("Moving")== true)
         {
-            Instantiate(_pointer, _target, Quaternion.identity);
             playerRigidbody.position = Vector3.Lerp(playerRigidbody.position, _target, (moveSpeed/100) /(Vector3.Distance(playerRigidbody.position, _target)));
+        }
+
+        if (Input.GetMouseButtonUp(1))
+        {
+            Instantiate(_pointer, _target, Quaternion.identity);
         }
 
         if (transform.position == _target)

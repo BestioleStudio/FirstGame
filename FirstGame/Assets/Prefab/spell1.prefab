@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212422269982236028}
   - component: {fileID: 58064258560267624}
   - component: {fileID: 50669952288367854}
+  - component: {fileID: 114955627719189236}
   m_Layer: 0
   m_Name: spell1
   m_TagString: Untagged
@@ -77,6 +78,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.24999999
+--- !u!114 &114955627719189236
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1610746205507076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d92f6f42c897904693bcd848cef6445, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 3
 --- !u!212 &212422269982236028
 SpriteRenderer:
   m_ObjectHideFlags: 1
