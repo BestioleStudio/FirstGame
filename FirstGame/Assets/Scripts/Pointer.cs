@@ -12,7 +12,7 @@ public class Pointer : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        animPlayer = GameObject.Find("MainCharacter").GetComponent<Animator>();
+        animPlayer = GameObject.Find("Player").GetComponent<Animator>();
 
     }
 	
