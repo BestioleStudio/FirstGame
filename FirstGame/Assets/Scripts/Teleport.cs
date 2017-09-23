@@ -23,8 +23,10 @@ public class Teleport : MonoBehaviour
             Debug.Log("teleport");
             TriggerTeleport();
 
+            Transform sprite = transform.Find("PlayerSprite");
+
             // Stop moving
-            Animator anim = GetComponent<Animator>();
+            Animator anim = sprite.GetComponent<Animator>();
             anim.SetBool("Moving", false);
         }
     }

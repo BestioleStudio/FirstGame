@@ -21,9 +21,10 @@ public class PlayerController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        Transform sprite = transform.Find("PlayerSprite");
 
         playerRigidbody = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+        anim = sprite.GetComponent<Animator>();
         anim.SetBool("Moving", false);
     }
     public void OnEnable()
@@ -76,7 +77,9 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("Moving", false);
         }
 
-        transform.rotation = Quaternion.Euler(0f, 0f, rotation_z);
+        Transform sprite = transform.Find("PlayerSprite");
+
+        sprite.transform.rotation = Quaternion.Euler(0f, 0f, rotation_z);
 
     }
     
