@@ -1,11 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GameMaster : MonoBehaviour {
 
-	public static void KillPlayer(Player player)
+	public static void KillPlayer(PlayerController player)
     {
-        Destroy(player);
+        Destroy(player.gameObject);
+    }
+
+    public static void KillEnemy( EnemyScript enemy )
+    {
+        Destroy(enemy.gameObject);
     }
 }

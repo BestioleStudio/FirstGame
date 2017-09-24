@@ -20,7 +20,7 @@ public class AttackWithSpell : MonoBehaviour {
     
     void Update()
     {
-        PlayerController playerController = GetComponent<PlayerController>();
+        PlayerMoveController playerController = GetComponent<PlayerMoveController>();
 
         if (Input.GetMouseButtonDown(0) && readyToShoot && playerController.keyPressed == "a")
         {

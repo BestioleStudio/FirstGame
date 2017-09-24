@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-public class Player : MonoBehaviour
+public class EnemyScript : MonoBehaviour
 {
-    public class PlayerStats
+    public class EnemyStats
     {
         public int maxHealth = 100;
 
@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    public PlayerStats stats = new PlayerStats();
+    public EnemyStats stats = new EnemyStats();
 
     [SerializeField]
     private StatusIndicator statusIndicator;
@@ -30,19 +30,19 @@ public class Player : MonoBehaviour
 
         if( statusIndicator == null)
         {
-            Debug.Log("nos status indicator refferenced on Player");
+            Debug.Log("nos status indicator refferenced on Enemy");
         } else
         {
             statusIndicator.setHealth(stats.currentHealth, stats.maxHealth);
         }
     }
     
-    public void DamagePlayer(int damage)
+    public void DamageEnemy(int damage)
     {
         stats.currentHealth -= damage;
         if (stats.currentHealth <= 0)
         {
-            GameMaster.KillPlayer(this);
+            GameMaster.KillEnemy(this);
         }
 
         statusIndicator.setHealth(stats.currentHealth, stats.maxHealth);

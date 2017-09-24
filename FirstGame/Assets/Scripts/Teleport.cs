@@ -16,7 +16,7 @@ public class Teleport : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PlayerController playerController = GetComponent<PlayerController>();
+        PlayerMoveController playerController = GetComponent<PlayerMoveController>();
 
         if (Input.GetMouseButtonDown(0) && readyToTrigger && playerController.keyPressed == "z")
         {
