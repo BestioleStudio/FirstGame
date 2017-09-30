@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
+
     public class PlayerStats
     {
         public int maxHealth = 100;
@@ -47,5 +49,4 @@ public class PlayerController : MonoBehaviour
 
         statusIndicator.setHealth(stats.currentHealth, stats.maxHealth);
     }
-
 }

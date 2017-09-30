@@ -16,7 +16,6 @@ public class PlayerMoveController : MonoBehaviour
     private Vector3 difference;
     public float moveSpeed = 30f;
     public GameObject _pointer;
-    public String keyPressed;
 
     // Use this for initialization
     void Start()
@@ -37,16 +36,6 @@ public class PlayerMoveController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.anyKeyDown)
-        {
-            if (Input.GetKeyDown("a"))
-            {
-                keyPressed = "a";
-            } else if (Input.GetKeyDown("z"))
-            {
-                keyPressed = "z";
-            }
-        }
 
         if (Input.GetMouseButtonDown(1) || Input.GetMouseButton(1))
         {

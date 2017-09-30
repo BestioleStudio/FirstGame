@@ -41,6 +41,8 @@ GameObject:
   - component: {fileID: 50335626709552228}
   - component: {fileID: 114442658017374638}
   - component: {fileID: 114499359427766074}
+  - component: {fileID: 114916302496894788}
+  - component: {fileID: 114748311294358564}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -304,6 +306,19 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114748311294358564
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1430383737696938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ab0d6acaa2b4944938fdba87f8f73c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyPressed: 
+  baseSpell: {fileID: 1210922255369302, guid: a6d44f95f172f584bb8bbe8f99c64b75, type: 2}
 --- !u!114 &114786759414306960
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -318,7 +333,6 @@ MonoBehaviour:
   Camera: {fileID: 0}
   moveSpeed: 3
   _pointer: {fileID: 1405127639763952, guid: 4582f57f6c6adb34395cc4aacf5a01cd, type: 2}
-  keyPressed: 
 --- !u!114 &114876727398118272
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -347,6 +361,17 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114916302496894788
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1430383737696938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44a0c46ff4d377e4aa0e0a97dd56f15c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212363675544589590
 SpriteRenderer:
   m_ObjectHideFlags: 1
