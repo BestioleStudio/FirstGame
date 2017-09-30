@@ -9,6 +9,8 @@ public class CooldownCashScript : MonoBehaviour {
     public float cooldown;
     public bool isCooldown;
 
+    public Image selected;
+
     private void Start()
     {
         isCooldown = true;

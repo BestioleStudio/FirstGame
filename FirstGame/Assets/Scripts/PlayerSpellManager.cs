@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerSpellManager : MonoBehaviour
 {
-    private KeyCode keyPressed = KeyCode.Joystick8Button19;
+    private int selectedSpellNumber = 999999;
     public float offset; 
 
     [SerializeField]
@@ -22,9 +22,18 @@ public class PlayerSpellManager : MonoBehaviour
         {
             for ( int i = 0; i<shortcuts.Length; i++ )
             {
-                if (Input.GetKeyDown(shortcuts[i]))
+                if (Input.GetKeyDown(shortcuts[i]) && spells[i] != null)
                 {
-                    keyPressed = shortcuts[i];
+                    if (selectedSpellNumber != 999999)
+                    {
+                        CooldownCashScript previouscooldownCashScript = spellsIcon[selectedSpellNumber].GetComponent<CooldownCashScript>();
+                        previouscooldownCashScript.selected.color = new Color(1f, 1f, 1f, 0f);
+                    }
+
+                    CooldownCashScript cooldownCashScript = spellsIcon[i].GetComponent<CooldownCashScript>();
+                    cooldownCashScript.selected.color = new Color(1f, 1f, 1f, 1f);
+
+                    selectedSpellNumber = i;
                     break;
                 }
             }
@@ -33,20 +42,21 @@ public class PlayerSpellManager : MonoBehaviour
         // Check if you can cast
         if (Input.GetMouseButtonDown(0))
         {
-            for (int i = 0; i < shortcuts.Length; i++)
+            if (selectedSpellNumber != 999999)
             {
-                if (!keyPressed.Equals(KeyCode.Joystick8Button19) && keyPressed == shortcuts[i])
+                CooldownCashScript cooldownCashScript = spellsIcon[selectedSpellNumber].GetComponent<CooldownCashScript>();
+
+                if (cooldownCashScript.isCooldown.Equals(false))
                 {
-                    CooldownCashScript cooldownCashScript = spellsIcon[i].GetComponent<CooldownCashScript>();
+                    CastSpell(spells[selectedSpellNumber]);
 
-                    if (cooldownCashScript.isCooldown.Equals(false))
-                    {
-                        CastSpell(spells[i]);
+                    cooldownCashScript.isCooldown = true;
+                    cooldownCashScript.cooldownCash.fillAmount = 1;
 
-                        cooldownCashScript.isCooldown = true;
-                        cooldownCashScript.cooldownCash.fillAmount = 1;
-                        keyPressed = KeyCode.Joystick8Button19;
-                    }
+                    CooldownCashScript previouscooldownCashScript = spellsIcon[selectedSpellNumber].GetComponent<CooldownCashScript>();
+                    previouscooldownCashScript.selected.color = new Color(1f, 1f, 1f, 0f);
+
+                    selectedSpellNumber = 999999;
                 }
             }
         }
@@ -80,10 +90,5 @@ public class PlayerSpellManager : MonoBehaviour
             default:
                 break;
         }
-
-        // Creation of the spell
-        
-
-        //readyToShoot = false;
     }
 }
